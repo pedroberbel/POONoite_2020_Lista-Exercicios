@@ -4,11 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         Porta porta = new Porta();
-        //private boolean aberta;
-        //private String cor;
-        //private double dimensaoX;
-       // private double dimensaoY;
-       // private double dimensaoZ;
+
         porta.setAberta(false);
         porta.setCor("Branca");
         porta.setDimensaoX(90);
