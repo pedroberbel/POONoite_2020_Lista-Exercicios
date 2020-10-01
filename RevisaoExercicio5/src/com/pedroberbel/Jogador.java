@@ -15,8 +15,12 @@ public class Jogador {
     }
 
     public boolean confereCartela(int numeroSorteado){
-        this.cartela.marcaCartela(numeroSorteado);
-        boolean bingo = cartela.deuBingo();
-        return bingo;
+        boolean marcou = false;
+        marcou =this.cartela.marcaCartela(numeroSorteado);
+        if (marcou) {
+            boolean bingo = cartela.deuBingo();
+            return bingo;
+        }
+        return false;
     }
 }

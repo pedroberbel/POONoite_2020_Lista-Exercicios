@@ -7,27 +7,40 @@ public class Main {
 	private ArrayList<Integer> numerosSorteados = new ArrayList<Integer>();
 
 	public int sorteiaNumero(){
-	    //onde é o melhor lugar para criar esta arraylist? dentro ou fora?
-	    //ArrayList<Integer> numerosSorteados = new ArrayList<Integer>();
+		int numeroSorteadoNovo = 0;
+		boolean numeroValido = false;
+
+		//for (int i = 0 ; i < 25 ;i++) {
+		while (!numeroValido) {
+			numeroSorteadoNovo = (int) (1 + Math.random() * 75);
+			if (numerosSorteados.contains(numeroSorteadoNovo)) {
+				//i--;
+				continue;
+			}
+			numeroValido = true;
+		}
+			numerosSorteados.add(numeroSorteadoNovo);
+		//}
+		return numeroSorteadoNovo;
+	}
+/*	Método estourando memória
+	public int sorteiaNumero(){
 	    int contadorAchou = 0;
 	    int numeroSorteadoNovo = (int)(1 + Math.random() * 75);
 
 		for (int numeroSorteado: this.numerosSorteados) {
 			if (numeroSorteadoNovo == numeroSorteado) {
 				contadorAchou++;
-				System.out.println("Repetiu");
 			}
 		}
 		if (contadorAchou > 0) {
-			sorteiaNumero();
+			sorteiaNumero();   // <<<<----------
 		}
-		System.out.println(this.numerosSorteados);
+		//System.out.println(this.numerosSorteados);
 		this.numerosSorteados.add(numeroSorteadoNovo);
 		return numeroSorteadoNovo;
-	    
-
 	}
-
+*/
 
 
     public static void main(String[] args) {
