@@ -1,10 +1,31 @@
 package com.pedroberbel;
 
+import java.util.ArrayList;
+
 public class Main {
 
-	public int sorteiaNumero(){
+	private ArrayList<Integer> numerosSorteados = new ArrayList<Integer>();
 
-		return (int)(1 + Math.random() * 75);
+	public int sorteiaNumero(){
+	    //onde é o melhor lugar para criar esta arraylist? dentro ou fora?
+	    //ArrayList<Integer> numerosSorteados = new ArrayList<Integer>();
+	    int contadorAchou = 0;
+	    int numeroSorteadoNovo = (int)(1 + Math.random() * 75);
+
+		for (int numeroSorteado: this.numerosSorteados) {
+			if (numeroSorteadoNovo == numeroSorteado) {
+				contadorAchou++;
+				System.out.println("Repetiu");
+			}
+		}
+		if (contadorAchou > 0) {
+			sorteiaNumero();
+		}
+		System.out.println(this.numerosSorteados);
+		this.numerosSorteados.add(numeroSorteadoNovo);
+		return numeroSorteadoNovo;
+	    
+
 	}
 
 
